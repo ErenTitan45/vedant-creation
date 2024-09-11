@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>साइन अप - माझी लाडकी बहिण योजना</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 150vh;
+            background: linear-gradient(to right, #d4390a, #c27023);
+        }
+
+        .signup-container {
+            background-color: white;
+            padding: 30px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            border-radius: 15px;
+            width: 450px;
+            animation: fadeIn 0.5s ease-in-out;
+            transition: transform 0.3s ease;
+        }
+
+        .signup-container:hover {
+            transform: scale(1.02);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .signup-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+            font-size: 1.7rem;
+            font-weight: bold;
+            text-shadow: 0px 3px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .signup-container form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .signup-container input,
+        .signup-container select,
+        .signup-container button {
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            transition: all 0.3s ease-in-out;
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+            font-size: 1rem;
+        }
+
+        .signup-container input:focus,
+        .signup-container select:focus {
+            outline: none;
+            border-color: #ce430c;
+            box-shadow: 0 0 5px rgba(206, 67, 12, 0.5);
+        }
+
+        .signup-container button {
+            background-color: #ce430c;
+            color: white;
+            cursor: pointer;
+            border: none;
+            padding: 15px;
+            font-weight: bold;
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            font-size: 1rem;
+        }
+
+        .signup-container button:hover {
+            background-color: #b03b0b;
+            transform: translateY(-2px);
+        }
+
+        .signup-container p {
+            text-align: center;
+            margin-top: 15px;
+            color: #333;
+            font-size: 0.9rem;
+        }
+
+        .signup-container a {
+            color: #ce430c;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .signup-container a:hover {
+            color: #b03b0b;
+            text-decoration: underline;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="signup-container">
+        <h2>साइन अप करा</h2>
+        <form action="signup.php" method="post">
+            <input type="text" name="full_name" placeholder="पूर्ण नाव" required>
+            <input type="text" name="mobile_no" placeholder="मोबाईल क्रमांक" required>
+            <input type="password" name="password" placeholder="पासवर्ड" required>
+
+            <!-- District Dropdown -->
+            <select id="district" name="district" required>
+                <option value="">जिल्हा निवडा</option>
+            </select>
+
+            <!-- Taluka Dropdown -->
+            <select id="taluka" name="taluka" required>
+                <option value="">तालुका निवडा</option>
+            </select>
+
+            <!-- Village Dropdown -->
+            <select id="village" name="village" required>
+                <option value="">गाव निवडा</option>
+                <option value="Hinjewadi">हिंजवडी</option>
+                <option value="Talegaon">तळेगाव</option>
+                <option value="Wakad">वाकड</option>
+            </select>
+
+            <select name="municipal_corporation" required>
+                <option value="">नगरपालिका / नगरपरिषद निवडा</option>
+                <option value="Ahmednagar Municipal Corporation">अहमदनगर महानगरपालिका</option>
+                <option value="Akola Municipal Corporation">अकोला महानगरपालिका</option>
+                <option value="Amravati Municipal Corporation">अमरावती महानगरपालिका</option>
+                <option value="Aurangabad Municipal Corporation">औरंगाबाद महानगरपालिका</option>
+                <option value="Bhiwandi-Nizampur Municipal Corporation">भिवंडी-निजामपूर महानगरपालिका</option>
+                <option value="Bhayander Municipal Corporation">भायंदर महानगरपालिका</option>
+                <option value="Chandrapur Municipal Corporation">चंद्रपूर महानगरपालिका</option>
+                <option value="Dhule Municipal Corporation">धुळे महानगरपालिका</option>
+                <option value="Jalgaon Municipal Corporation">जळगाव महानगरपालिका</option>
+                <option value="Kolhapur Municipal Corporation">कोल्हापूर महानगरपालिका</option>
+                <option value="Latur Municipal Corporation">लातूर महानगरपालिका</option>
+                <option value="Malegaon Municipal Corporation">मालेगाव महानगरपालिका</option>
+                <option value="Mumbai Municipal Corporation">मुंबई महानगरपालिका</option>
+                <option value="Nagpur Municipal Corporation">नागपूर महानगरपालिका</option>
+                <option value="Nanded-Waghala Municipal Corporation">नांदेड-वाघाळा महानगरपालिका</option>
+                <option value="Nashik Municipal Corporation">नाशिक महानगरपालिका</option>
+                <option value="Navi Mumbai Municipal Corporation">नवी मुंबई महानगरपालिका</option>
+                <option value="Panvel Municipal Corporation">पनवेल महानगरपालिका</option>
+                <option value="Parbhani Municipal Corporation">परभणी महानगरपालिका</option>
+                <option value="Pimpri-Chinchwad Municipal Corporation">पिंपरी-चिंचवड महानगरपालिका</option>
+                <option value="Pune Municipal Corporation">पुणे महानगरपालिका</option>
+                <option value="Sangli-Miraj-Kupwad Municipal Corporation">सांगली-मिरज-कुपवाड महानगरपालिका</option>
+                <option value="Solapur Municipal Corporation">सोलापूर महानगरपालिका</option>
+                <option value="Thane Municipal Corporation">ठाणे महानगरपालिका</option>
+                <option value="Ulhasnagar Municipal Corporation">उल्हासनगर महानगरपालिका</option>
+                <option value="Vasai-Virar Municipal Corporation">वसई-विरार महानगरपालिका</option>
+                <option value="Not under any municipality">कोणत्याही नगरपरिषद अंतर्गत नाही</option>
+            </select>
+
+        <!-- ti vyakti kon ahe jicha form bhraycha ahe  -->
+        <select name="authorized_person" required>
+                <option value="Authorized Person">authorized person</option>
+            <option value="general_woman">सामान्य महिला</option>
+            <option value="crp">समूह संसाधन व्यक्ती (CRP)</option>
+            <option value="anganwadi_sevika">अंगणवाडी सेविका</option>
+            <option value="municipal_corporation">महानगरपालिका बालवाडी सेविका</option>
+            <option value="asha_sevika">आशा सेविका</option>
+            <option value="aple_sarkar">आपले सरकार सेवा केंद्र</option>
+            <option value="city_mission_manager">सिटी मिशन मॅनेजर (सीएमएम)</option>
+            <option value="supervisor">पर्यवेक्षिका (मुख्य सेविका)</option>
+            </select>
+            </select>
+            <button type="submit">साइन अप</button>
+        </form>
+        <p>आधीच खाते आहे? <a href="login.html">लॉगिन करा</a></p>
+    </div>
+
+    <script>
+      const data = {
+            "Pune": {
+                "talukas": ["Pune City", "Haveli", "Baramati", "Bhor", "Daund", "Indapur", "Junnar", "Khed", "Maval", "Mulshi", "Purandar", "Shirur", "Velhe"]
+            },
+            "Satara": {
+                "talukas": ["Satara", "Karad", "Koregaon", "Patan", "Phaltan", "Khatav", "Man", "Wai", "Mahabaleshwar", "Jaoli"]
+            },
+            "Sangli": {
+                "talukas": ["Miraj", "Tasgaon", "Khanapur", "Atpadi", "Jat", "Kavathe Mahankal", "Palus", "Shirala", "Walwa"]
+            },
+            "Solapur": {
+                "talukas": ["Solapur North", "Solapur South", "Akkalkot", "Barshi", "Karmala", "Madha", "Malshiras", "Mangalvedha", "Pandharpur", "Sangole"]
+            },
+            "Kolhapur": {
+                "talukas": ["Karveer", "Panhala", "Shahuwadi", "Hatkanangale", "Shirol", "Kagal", "Gadhinglaj", "Bhudargad", "Ajara", "Chandgad", "Radhanagari"]
+            },
+            "Ahmednagar": {
+                "talukas": ["Ahmednagar", "Akole", "Jamkhed", "Karjat", "Kopargaon", "Nevasa", "Parner", "Pathardi", "Rahata", "Rahuri", "Sangamner", "Shrirampur", "Shrigonda", "Shevgaon"]
+            },
+            "Nashik": {
+                "talukas": ["Nashik", "Igatpuri", "Dindori", "Kalwan", "Nandgaon", "Chandwad", "Sinnar", "Niphad", "Yeola", "Surgana", "Peth", "Trimbakeshwar", "Deola", "Baglan"]
+            },
+            "Dhule": {
+                "talukas": ["Dhule", "Sakri", "Shirpur", "Shindkheda"]
+            },
+            "Jalgaon": {
+                "talukas": ["Jalgaon", "Bhusawal", "Chalisgaon", "Amalner", "Erandol", "Pachora", "Jamner", "Parola", "Raver", "Yawal", "Muktainagar", "Bodwad"]
+            },
+            "Nandurbar": {
+                "talukas": ["Nandurbar", "Shahada", "Taloda", "Akkalkuwa", "Akrani", "Navapur"]
+            },
+            "Mumbai City": {
+                "talukas": ["Mumbai City"]
+            },
+            "Mumbai Suburban": {
+                "talukas": ["Andheri", "Borivali", "Kurla"]
+            },
+            "Thane": {
+                "talukas": ["Thane", "Kalyan", "Ulhasnagar", "Bhiwandi", "Shahapur", "Murbad", "Ambernath", "Dahanu", "Jawhar", "Mokhada", "Palghar", "Talasari", "Vasai", "Wada"]
+            },
+            "Raigad": {
+                "talukas": ["Alibag", "Karjat", "Khalapur", "Mahad", "Mangaon", "Mhasla", "Murud", "Panvel", "Pen", "Poladpur", "Roha", "Shrivardhan", "Sudhagad", "Tala", "Uran"]
+            },
+            "Ratnagiri": {
+                "talukas": ["Ratnagiri", "Chiplun", "Dapoli", "Guhagar", "Khed", "Lanja", "Mandangad", "Rajapur", "Sangameshwar"]
+            },
+            "Sindhudurg": {
+                "talukas": ["Kankavli", "Deogad", "Malvan", "Sawantwadi", "Vengurla", "Dodamarg", "Kudal"]
+            },
+            "Aurangabad": {
+                "talukas": ["Aurangabad", "Kannad", "Khuldabad", "Paithan", "Sillod", "Soygaon", "Vaijapur", "Gangapur", "Phulambri"]
+            },
+            "Beed": {
+                "talukas": ["Beed", "Ashti", "Georai", "Kaij", "Majalgaon", "Parli", "Patoda", "Shirur", "Wadwani"]
+            },
+            "Jalna": {
+                "talukas": ["Jalna", "Ambad", "Bhokardan", "Jafrabad", "Mantha", "Partur", "Ghansawangi"]
+            },
+            "Osmanabad": {
+                "talukas": ["Osmanabad", "Tuljapur", "Omerga", "Bhoom", "Paranda", "Kalamb", "Lohara", "Washi"]
+            },
+            "Nanded": {
+                "talukas": ["Nanded", "Ardhapur", "Bhokar", "Biloli", "Deglur", "Dharmabad", "Hadgaon", "Himayatnagar", "Kandhar", "Kinwat", "Loha", "Mahur", "Mukhed", "Mudkhed", "Naigaon", "Umri"]
+            },
+            "Latur": {
+                "talukas": ["Latur", "Ahmedpur", "Ausa", "Chakur", "Deoni", "Jalkot", "Nilanga", "Renapur", "Shirur Anantpal", "Udgir"]
+            },
+            "Amravati": {
+                "talukas": ["Amravati", "Achalpur", "Anjangaon", "Bhatkuli", "Chandur Bazar", "Chandur Railway", "Chikhaldara", "Daryapur", "Dharni", "Dhamangaon", "Morshi", "Nandgaon Khandeshwar", "Teosa", "Warud"]
+            },
+            "Akola": {
+                "talukas": ["Akola", "Akot", "Balapur", "Barshitakli", "Murtijapur", "Patur", "Telhara"]
+            },
+            "Yavatmal": {
+                "talukas": ["Yavatmal", "Arni", "Babhulgaon", "Darwha", "Digras", "Ghatanji", "Kalamb", "Mahagaon", "Maregaon", "Ner", "Pusad", "Ralegaon", "Umarkhed", "Wani", "Zari Jamni"]
+            },
+            "Buldhana": {
+                "talukas": ["Buldhana", "Chikhli", "Deulgaon Raja", "Jalgaon Jamod", "Khamgaon", "Lonar", "Malkapur", "Mehkar", "Motala", "Nandura", "Sangrampur", "Shegaon", "Sindkhed Raja"]
+            },
+            "Washim": {
+                "talukas": ["Washim", "Karanja", "Mangrulpir", "Manora", "Risod"]
+            },
+            "Wardha": {
+                "talukas": ["Wardha", "Arvi", "Ashti", "Deoli", "Hinganghat", "Karanja", "Samudrapur", "Seloo"]
+            },
+            "Nagpur": {
+                "talukas": ["Nagpur", "Hingna", "Kamptee", "Katol", "Kuhi", "Mauda", "Narkhed", "Parseoni", "Ramtek", "Savner", "Umred"]
+            },
+            "Bhandara": {
+                "talukas": ["Bhandara", "Lakhandur", "Lakhani", "Mohadi", "Pauni", "Sakoli", "Tumsar"]
+            },
+            "Chandrapur": {
+                "talukas": ["Chandrapur", "Bhadravati", "Brahmapuri", "Chimur", "Gondpipri", "Mul", "Nagbhid", "Pombhurna", "Rajura", "Saoli", "Sindewahi", "Warora"]
+            },
+            "Gadchiroli": {
+                "talukas": ["Gadchiroli", "Aheri", "Armori", "Bhamragad", "Chamorshi", "Dhanora", "Etapalli", "Korchi", "Kurkheda", "Mulchera", "Sironcha"]
+            },
+            "Gondia": {
+                "talukas": ["Gondia", "Amgaon", "Arjuni Morgaon", "Deori", "Goregaon", "Sadak Arjuni", "Salekasa", "Tirora"]
+            },
+            "Wardha": {
+                "talukas": ["Wardha", "Arvi", "Ashti", "Deoli", "Hinganghat", "Karanja", "Samudrapur", "Seloo"]
+            }
+        };
+        const districtSelect = document.getElementById('district');
+        const talukaSelect = document.getElementById('taluka');
+        const villageSelect = document.getElementById('village');
+
+        // Populate Districts
+        for (const district in data) {
+            const option = document.createElement('option');
+            option.value = district;
+            option.textContent = district;
+            districtSelect.appendChild(option);
+        }
+
+        // Update Talukas on District Change
+        districtSelect.addEventListener('click', function () {
+            const selectedDistrict = this.value;
+            talukaSelect.innerHTML = '<option value="">तालुका निवडा</option>';
+
+            if (selectedDistrict && data[selectedDistrict]) {
+                data[selectedDistrict].talukas.forEach(taluka => {
+                    const option = document.createElement('option');
+                    option.value = taluka;
+                    option.textContent = taluka;
+                    talukaSelect.appendChild(option);
+                });
+            }
+        });
+
+        // You can add further code for villages if needed based on the taluka
+    </script>
+</body>
+</html>

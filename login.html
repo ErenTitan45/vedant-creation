@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>लॉगिन - माझी लाडकी बहिण योजना</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+      
+      body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Adjusted from 170vh to 100vh for better alignment */
+  background: linear-gradient(to right, #d4390a, #c27023);
+}
+
+.login-container {
+  background: white;
+  display: flex;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  width: 80%; /* Reduced width */
+  max-width: 700px; /* Added a max-width to limit size */
+}
+
+.login-container:hover {
+  transform: scale(1.01);
+}
+
+.image-section {
+  background-color: #fff;
+  padding: 10px; /* Reduced padding */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(to top, #f3f3f3, #fff);
+  width: 40%; /* Adjusted width */
+}
+
+.image-section img {
+  max-width: 100%;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.image-section img:hover {
+  transform: scale(1.05);
+}
+
+.form-section {
+  padding: 30px 20px; /* Adjusted padding */
+  width: 60%; /* Adjusted width */
+  text-align: center;
+  background-color: #ffffff;
+}
+
+.form-section .login-header {
+  background: linear-gradient(to right, #d4390a, #c27023);
+  color: white;
+  padding: 10px 0; /* Reduced padding */
+  border-radius: 10px;
+  margin-bottom: 20px; /* Reduced margin */
+  font-size: 1.5rem; /* Adjusted font size */
+  font-weight: bold;
+  text-shadow: 0px 3px 5px rgba(0, 0, 0, 0.3);
+}
+
+.form-section input {
+  width: 90%;
+  padding: 10px; /* Reduced padding */
+  margin: 12px 0; /* Adjusted margin */
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-size: 0.95rem; /* Slightly reduced font size */
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.form-section input:focus {
+  border-color: #c27023;
+  box-shadow: 0 0 5px rgba(194, 112, 35, 0.5);
+  outline: none;
+}
+
+.form-section button {
+  background-color: #ce430c;
+  color: white;
+  border: none;
+  padding: 10px; /* Reduced padding */
+  border-radius: 8px;
+  cursor: pointer;
+  width: 100%;
+  font-size: 1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.form-section button:hover {
+  background-color: #b03b0b;
+  transform: translateY(-2px);
+}
+
+.form-section a {
+  display: block;
+  margin-top: 15px; /* Adjusted margin */
+  color: #333;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.form-section a:hover {
+  color: #ce430c;
+}
+
+.captcha-container {
+  display: flex;
+  align-items: center;
+  margin: 10px 0; /* Adjusted margin */
+}
+
+.captcha-image {
+  border: 1px solid #ccc;
+  padding: 8px; /* Adjusted padding */
+  margin-right: 10px; /* Adjusted margin */
+  user-select: none;
+  font-weight: bold;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  font-size: 1rem; /* Reduced font size */
+  letter-spacing: 2px;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.refresh-captcha {
+  cursor: pointer;
+  background-color: #ffbc00;
+  border: none;
+  padding: 8px; /* Adjusted padding */
+  border-radius: 5px;
+  color: white;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+}
+
+.refresh-captcha:hover {
+  background-color: #e0a800;
+}
+
+
+  </style>
+
+</head>
+<body>
+  <div class="login-container">
+    <div class="image-section">
+      <img src="web images/new-logo.png" alt="माझी लाडकी बहिण योजना">
+    </div>
+    <div class="form-section">
+      <div class="login-header">
+        लॉगिन
+      </div>
+      <!-- Login Form -->
+      <form id="loginForm" action="login.php" method="post" onsubmit="return validateForm()">
+        <input type="text" id="mobile_no" name="mobile_no" placeholder="मोबाईल क्रमांक" required>
+        <input type="password" name="password" placeholder="पासवर्ड" required>
+
+        <div class="captcha-container">
+          <div class="captcha-image" id="captchaImage"> 
+          </div>
+          <button type="button" class="refresh-captcha" onclick="generateCaptcha()">Refresh</button>
+        </div>
+        <input type="text" name="captcha" placeholder="कॅप्चा प्रविष्ट करा" required>
+
+        <button type="submit">लॉगिन</button>
+      </form>
+
+      <a href="signup.html">नवीन खाते तयार करा</a>
+      <a href="forgot_password.html">पासवर्ड विसरलात?</a>
+    </div>
+  </div>
+
+  <script>
+    let generatedCaptcha = '';
+
+    function generateCaptcha() {
+      const captchaText = Math.random().toString(36).substring(2, 8).toUpperCase();
+      document.getElementById('captchaImage').innerText = captchaText;
+      generatedCaptcha = captchaText;
+    }
+
+    function validateForm() {
+      const mobileNo = document.getElementById('mobile_no').value;
+      const captchaInput = document.querySelector('input[name="captcha"]').value;
+      const messageDiv = document.getElementById('message');
+
+      if (mobileNo.length !== 10) {
+        alert('मोबाईल क्रमांक 10 अंकांचा असावा लागतो.');
+        return false; // Stop form submission
+      }
+
+      if (captchaInput !== generatedCaptcha) {
+        alert('कॅप्चा चुकीचा आहे.');
+        generateCaptcha(); // Generate a new captcha
+        return false; // Stop form submission
+      }
+
+      return true; // Allow form submission
+    }
+
+    window.onload = generateCaptcha;
+  </script>
+</body>
+</html>

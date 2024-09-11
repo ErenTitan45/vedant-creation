@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>मुख्यपृष्ठ - माझी लाडकी बहिण योजना</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            0% { transform: translateY(-20px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            animation: fadeIn 1s ease;
+        }
+
+        .header {
+            background: linear-gradient(to right, #170ad4, #021061);
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #dce7e7;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            animation: slideIn 1.2s ease;
+        }
+
+        .logos {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 5px;
+            animation: slideIn 1.4s ease;
+        }
+
+        .left-logos, .right-logo {
+            display: flex;
+            gap: 30px;
+        }
+
+        .left-logos img, .right-logo img {
+            height: 85px;
+            width: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .left-logos img:hover, .right-logo img:hover {
+            transform: scale(1.1);
+        }
+
+        nav {
+            background-color: #ce430c;
+            padding: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            animation: slideIn 1.6s ease;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li a {
+            color: #dfd7d7;
+            text-align: center;
+            text-decoration: none;
+            font-size: 1rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 0.5rem;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            padding: 10px;
+        }
+
+        nav ul li a:hover {
+            background-color: #b03b0b;
+            border-radius: 5px;
+            transform: scale(1.1);
+        }
+
+        main {
+            text-align: center;
+            padding: 20px;
+            animation: fadeIn 2s ease;
+        }
+
+        main img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        main img:hover {
+            transform: scale(1.05);
+        }
+
+        h1 {
+            color: #333;
+            margin-top: 30px;
+            animation: slideIn 1.8s ease;
+            display: block;
+            line-height: 1.4;
+        }
+
+        .info-boxes {
+            display: flex;
+            justify-content: space-around;
+            margin: 30px 0;
+            gap: 20px;
+            animation: fadeIn 2.4s ease;
+            flex-wrap: wrap;
+        }
+
+        .info-box {
+            background-color: #d4430f;
+            color: white;
+            padding: 10px;
+            border-radius: 8px;
+            text-align:center;
+            width: 30%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            animation: fadeIn 2s ease;
+        }
+        
+
+        .info-box:hover {
+            transform: scale(1.05);
+        }
+
+        .content-section {
+            padding: 20px;
+            text-align: left;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .content-section h3 {
+            margin-top: 40px;
+            font-size: 1.5rem;
+        }
+
+        .content-section p {
+            margin-bottom: 20px;
+        }
+
+        .video-container {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        iframe, video {
+            width: 80%;
+            height: 400px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+             /* Heading and boxes */
+        .heading-main {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 1.8rem;
+            color: #333;
+        }
+
+        .heading-boxes {
+            display: flex;
+            justify-content:space-between;
+            margin: 20px 0;
+            animation: fadeIn 2.4s ease;
+            flex-wrap: wrap;
+            transition: transform 0.3s ease;
+        }
+
+        .heading-box {
+            background-color: orange;
+            color: white;
+            padding: 5px;
+            border-radius: 8px;
+            text-align: center;
+            width: 30%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            animation: fadeIn 2s ease;
+        }
+
+        .heading-box:nth-child(1) {
+            background-color: rgb(231, 118, 12);
+            transform: scale(1.05);
+        }
+
+        .heading-box:nth-child(2) {
+            background-color: rgb(15, 98, 223);
+            transform: scale(1.05);
+        }
+
+        .heading-box:nth-child(3) {
+            background-color: rgb(15, 98, 223);
+            transform: scale(1.05);
+        }
+
+        p {
+            margin: 10px 20px;
+        }
+        .bordered-paragraphs {
+            border: 2px solid #c25c09;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 20px 0;
+            background-color: #f9f9f9;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .bordered-paragraphs p {
+            margin: 10px 0;
+            font-size: 1.1rem;
+            color: #333;
+        }
+        
+        .footer {
+            background-color: #021061;
+            color: white;
+            padding: 5px;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+            font-size: 0.8rem;
+            animation: fadeIn 2.6s ease;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header">
+            <div class="helpline">
+                हेल्पलाइन क्रमांक: 9322765939
+            </div>
+        </div>
+        <div class="logos">
+            <div class="left-logos">
+                <img src="web images/new-logo.png" alt="लोगो 1">
+                <img src="logo-maha.png" alt="लोगो 2">
+            </div>
+            <div class="right-logo">
+                <img src="govEmblem.png" alt="लोगो 3">
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html"><i class="fas fa-home"></i> मुख्यपृष्ठ</a></li>
+                <li><a href="about.html"><i class="fas fa-info"></i> माहिती</a></li>
+                <li><a href="documents.html"><i class="fas fa-file"></i> कागदपत्रे</a></li>
+                <li><a href="login.html"><i class="fas fa-user"></i> लॉगिन</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <img src="new-hero.jpeg" alt="योजनेची छायाचित्रे">
+        <h1>माझी लाडकी बहिण योजना मध्ये स्वागत आहे</h1>
+        
+
+        <!-- Info Boxes Section -->
+        <div class="info-boxes">
+            <div class="info-box">
+                <h2>पोर्टलवर प्राप्त अर्जांची एकूण संख्या</h2>
+                <p>1</p>
+            </div>
+            <div class="info-box">
+                <h2>पोर्टलवर मंजूर अर्जांची एकूण संख्या</h2>
+                <p>1</p>
+            </div>
+            <div class="info-box">
+                <h2>पोर्टलवर एकूण लाभार्थ्यांची संख्या</h2>
+                <p>0</p>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h3>मुख्यमंत्री - माझी लाडकी बहीण योजना</h3>
+            <p>राज्यातील महिलांच्या आर्थिक स्वातंत्र्यासाठी, त्यांच्या आरोग्य आणि पोषणामध्ये सुधारणा करणे आणि कुटुंबातील त्यांची निर्णायक भूमिका मजबूत करण्यासाठी महाराष्ट्र राज्याची "मुख्यमंत्री माझी लाडकी बहीण" योजना सुरु करण्यास महाराष्ट्र शासनाने २८ जून २०२४ रोजी मान्यता दिली.</p>
+    
+            <!-- Video Section -->
+            <div class="video-container">
+                <h3>मुख्यमंत्री - माझी लाडकी बहीण योजना व्हिडिओ</h3>
+                <video controls>
+                    <source src="hero-video.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="heading-boxes">
+                <div class="heading-box">
+                    <h3>पात्रता</h3>
+                </div>
+                <div class="heading-box">
+                    <h3>अपात्रता</h3>
+                </div>
+                <div class="heading-box">
+                    <h3>अर्ज प्रक्रिया</h3>
+                </div>
+            </div>
+            <div class="bordered-paragraphs">
+                <p>१. महाराष्ट्र राज्याचे रहिवाशी असणे आवश्यक.</p>
+                <p>२. राज्यातील विवाहीत, विधवा, घटस्फोटीत, परित्यक्ता आणि निराधार महिला तसेच कुटुंबातील केवळ एक अविवाहित महिला.</p>
+                <p>३. किमान वयाची २१ वर्षे पूर्ण व कमाल वयाची ६५ वर्ष पूर्ण होईपर्यंत.</p>
+                <p>४. लाभार्थ्याचे स्वतःचे आधार लिंक असलेले बँक खाते असावे.</p>
+                <p>५. लाभार्थी कुटुंबाचे वार्षिक उत्पन्न रु. २.५० लाखापेक्षा जास्त नसावे.</p>
+            </div>
+            
+            <h3>महिला व बाल विकास विभाग, महाराष्ट्र</h3>
+            <p>3 रा मजला, नवीन प्रशासकीय इमारत, मादाम कामा रोड, हुतात्मा राजगुरू चौक, मुंबई - 400032, महाराष्ट्र, भारत</p>
+        </div>
+    </div>
+</main>
+        </div>
+    </main>
+
+    <div class="footer">
+        <p>© 2024 महिला व बाल विकास विभाग. सर्व हक्क राखीव.</p>
+    </div>
+</body>
+</html>
